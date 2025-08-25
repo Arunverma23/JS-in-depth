@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(MAP,REDUCE,FILTER)</title>
+</head>
+<body>
+    
+</body>
+
+<Script>
+
+    // --> Maps
+    // const nums = [1,2,3,4,5];
+
+    // const multiplyThree = nums.map((num, idx, arr)=>{
+    //     return num * 3 + idx;
+    //     // return num > 2;
+    //     // return idx + num;
+
+    // })
+
+    // console.log(multiplyThree);
+
+    // // --> Filter
+    // const moreThanTwo = nums.filter((num, idx, arr)=>{
+    //     return num > 2;
+    //     // return num * 3 + idx;
+    //     // return idx + num;
+    // })
+
+    // console.log(moreThanTwo);
+
+    // --> Reduce
+
+    // const sum = nums.reduce((acc, curr, idx, arr) => {
+    //     return acc + curr;
+    //     // return curr > 2;
+    //     // return curr * 3 + idx;
+    // },1)
+
+    // console.log(sum);
+    
+    // var numbers = [1, 2, 3, 4];
+    // numbers = numbers.map(num => num * 2);
+
+    // console.log(numbers); // [2, 4, 6, 8]
+
+    // --> PolyFill for map()
+
+    // Array.map((num,i,arr)=>{})
+
+    Array.prototype.myMap = function(callback){
+        let temp = [];
+        for(let i=0;i<this.length;i++){
+            temp.push(callback(this[i], i, this))
+        }
+        
+        return temp;
+    }
+
+    const nums = [1,2,3,4,5];
+
+    const multiplyTwo = nums.myMap((num, idx, nums)=>{
+        return num * 2;
+    })
+
+    console.log(multiplyTwo);
+
+</Script>
+
+</html>
