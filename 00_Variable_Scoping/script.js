@@ -1,0 +1,98 @@
+
+// var is function-scoped: it is visible everywhere inside the function in which it's declared.
+
+// let and const are block-scoped: they are only visible inside the block { ... } in which they're declared.
+
+// a = 5 --? let ? var ? const ? => nothing , it's a implicit global
+
+// -->scoping
+
+// function name(){
+//     // function scope
+// }
+
+// {
+//     var a = 1;
+//     let b = 2;
+//     const c = 3;
+// }
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// -->variable shadowing
+
+// function test(){
+//     var a = "hello"
+//     let b = "bye"
+//     const c = "CONST";
+
+//     if(true){
+//         let a = "Hi"
+//         // var b = "Bye" re-declaration of varibales
+//         const c = "const";
+        
+//         console.log(a);
+//         console.log(b)
+//         console.log(c)
+//     }
+     
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+
+// test()
+
+// -->Declaration
+
+// var a;
+// var a; redeclare as many time as we want
+
+// let b;
+// let b; // cannot re-declare in same scope
+
+// const c;
+// we cant cannot declare const without initialisation
+// const c; // cannot re-declare in same scope
+
+// --> Declaration without initialisation
+
+// var a = 5;
+// var a = 6;
+// a = 7;
+
+// let b = 1;
+// let b = 2; can't assume again
+// b = 3;
+
+// const c = 5;
+// const c = 5; can't
+// c = 5 // can't
+
+// --> Hoisting && Temporal dead zone 
+
+// var count;
+// console.log(count);
+// count = 1;
+
+// console.log(count); // hoisted but in TDZ
+// let count;
+// count = 1;
+
+// console.log(c); // hoisted but in TDZ
+// const c=1;
+
+// ---> Interview Question
+
+// function abc(){
+//     console.log(a,b,c);
+
+//     const c = 30;
+//     let b = 20;
+
+//     var a = 10;
+// }
+
+// abc();
